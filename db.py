@@ -19,10 +19,6 @@ p_engine = create_engine(
     )
 
 
-metadata = db.MetaData()
-
-discover = db.Table('discover', metadata, autoload=True, autoload_with=p_engine)
-
 def create_table():
    p_engine.execute("CREATE TABLE IF  NOT EXISTS disease_type(id INT PRIMARY KEY, description VARCHAR(140))")
 
@@ -301,11 +297,11 @@ def view_all_data9():
     return result.fetchall()
 
 def write_record9(cname,disease_code, first_enc_date,p_engine):
-     stmt = insert(discover).values(cname=cname, disease_code=disease_code,first_enc_date=first_enc_date)
+     stmt = insert('discover').values(cname=cname, disease_code=disease_code,first_enc_date=first_enc_date)
      p_engine.execute(stmt)
 
 def update_record9(cname,disease_code,first_enc_date):
-    stmt = update(discover).where(discover.c.cname==cname).where(discover.c.disease_code==disease_code).values(first_enc_date=first_enc_date) 
+    stmt = update('discover').where('discover'.c.cname==cname).where('discover'.c.disease_code==disease_code).values(first_enc_date=first_enc_date) 
     p_engine.execute(stmt)
 
 def delete_record9(cname,disease_code):
