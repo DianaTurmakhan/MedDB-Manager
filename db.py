@@ -10,8 +10,8 @@ import datetime
 from sqlalchemy import insert
 from sqlalchemy import update
 import psycopg2
-import supabase
-from supabase import disease_type
+
+
 
 
 # first table 
