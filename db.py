@@ -14,7 +14,7 @@ import psycopg2
 
 # first table 
 p_engine = create_engine(
-        st.secrets['Diana'],
+        st.secrets['post'],
         connect_args={'options': f'-csearch_path=Postgres'}
     )
 
