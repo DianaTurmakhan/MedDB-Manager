@@ -14,7 +14,7 @@ import psycopg2
 
 # first table 
 p_engine = create_engine(
-        st.secrets['postgres'])
+        st.secrets['url'])
 
 metadata = db.MetaData()
 
