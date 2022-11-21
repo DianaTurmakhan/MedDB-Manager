@@ -27,7 +27,7 @@ def write_record(id,description,p_engine):
     
 
 def view_all_data():
-    result = p_engine.execute("SELECT * FROM disease_type ORDER BY id ASC")
+    result = p_engine.execute("SELECT * FROM 'disease_type' ORDER BY id ASC")
     return result.fetchall()
 
 
