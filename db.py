@@ -14,9 +14,7 @@ import psycopg2
 
 # first table 
 p_engine = create_engine(
-        st.secrets['postgres'],
-        connect_args={'options': f'-csearch_path=Assignment2'}
-    )
+        st.secrets['postgres'])
 
 metadata = db.MetaData()
 
