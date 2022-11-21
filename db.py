@@ -10,6 +10,8 @@ import datetime
 from sqlalchemy import insert
 from sqlalchemy import update
 import psycopg2
+import supabase
+from supabase import disease_type
 
 
 # first table 
@@ -17,7 +19,9 @@ p_engine = create_engine(
         st.secrets['Post'],
         connect_args={'options': f'-csearch_path=Postgres'}
     )
+metadata = db.MetaData()
 
+discover = db.Table('disease_type', metadata, autoload=True, autoload_with=p_engine)
 
 def create_table():
    p_engine.execute("CREATE TABLE IF  NOT EXISTS disease_type(id INT PRIMARY KEY, description VARCHAR(140))")
