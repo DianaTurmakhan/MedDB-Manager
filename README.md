@@ -28,3 +28,10 @@ To set up and run the project locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/MedData-Manager.git
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+3. Set up your PostgreSQL database and add the connection details to your Streamlit secrets.
+4. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
